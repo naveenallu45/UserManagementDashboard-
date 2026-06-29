@@ -41,9 +41,9 @@ export const TELUGU_USER_PROFILES = [
 ];
 
 export const ADMIN_USER = {
-  name: 'Suresh Kumar',
+  name: 'Allu Naveen',
   role: 'System Administrator',
-  initials: 'SK',
+  initials: 'Allu',
 }
 
 export const NAV_ITEMS = [

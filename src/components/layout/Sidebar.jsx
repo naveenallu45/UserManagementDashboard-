@@ -49,10 +49,10 @@ export default function Sidebar({ isOpen, onClose, onLogout }) {
       >
         <div className="flex h-16 items-center gap-3 border-b border-gray-200 px-5">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-sm font-bold text-white">
-            AC
+            TQ
           </div>
           <div>
-            <p className="text-sm font-semibold text-gray-900">Acme Corp</p>
+            <p className="text-sm font-semibold text-gray-900">Tacnique</p>
             <p className="text-xs text-gray-500">Admin Console</p>
           </div>
         </div>
