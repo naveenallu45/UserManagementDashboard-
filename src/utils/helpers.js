@@ -1,4 +1,4 @@
-import { DEPARTMENTS, TELUGU_USER_PROFILES } from './constants'
+import { DEPARTMENTS, USER_PROFILES } from './constants'
 
 export function splitName(fullName) {
   if (!fullName || typeof fullName !== 'string') {
@@ -32,8 +32,8 @@ export function assignStatus(userId) {
 }
 
 export function getTeluguProfile(userId) {
-  const index = (Math.abs(Number(userId) || 1) - 1) % TELUGU_USER_PROFILES.length
-  return TELUGU_USER_PROFILES[index]
+  const index = (Math.abs(Number(userId) || 1) - 1) % USER_PROFILES.length
+  return USER_PROFILES[index]
 }
 
 export function normalizeUser(rawUser) {

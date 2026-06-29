@@ -22,7 +22,7 @@ export const PAGE_SIZE_OPTIONS = [10, 25, 50, 100]
 
 export const DEFAULT_PAGE_SIZE = 10
 
-export const TELUGU_USER_PROFILES = [
+export const USER_PROFILES = [
   { firstName: 'Venkatesh', lastName: 'Reddy', email: 'venkateshreddy@gmail.com' },
   { firstName: 'Lakshmi', lastName: 'Priya', email: 'lakshmipriya@gmail.com' },
   { firstName: 'Srinivas', lastName: 'Murthy', email: 'srinivasmurthy@gmail.com' },
