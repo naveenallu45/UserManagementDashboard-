@@ -44,16 +44,19 @@ export function useUsers() {
     try {
       await createUser(payload)
 
-      const newUser = normalizeUser({
-        id: generateUserId(users),
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        department: formData.department,
-        status: 'Active',
+      setUsers((prev) => {
+        const newUser = normalizeUser({
+          id: generateUserId(prev),
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          department: formData.department,
+          status: 'Active',
+        })
+
+        return [...prev, newUser].sort((a, b) => a.id - b.id)
       })
 
-      setUsers((prev) => [...prev, newUser].sort((a, b) => a.id - b.id))
       return { success: true }
     } catch (err) {
       return {
@@ -64,7 +67,7 @@ export function useUsers() {
           'Something went wrong.',
       }
     }
-  }, [users])
+  }, [])
 
   const updateUser = useCallback(async (id, formData) => {
     const payload = {

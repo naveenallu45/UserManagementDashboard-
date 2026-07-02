@@ -22,24 +22,6 @@ export const PAGE_SIZE_OPTIONS = [10, 25, 50, 100]
 
 export const DEFAULT_PAGE_SIZE = 10
 
-export const USER_PROFILES = [
-  { firstName: 'Venkatesh', lastName: 'Reddy', email: 'venkateshreddy@gmail.com' },
-  { firstName: 'Lakshmi', lastName: 'Priya', email: 'lakshmipriya@gmail.com' },
-  { firstName: 'Srinivas', lastName: 'Murthy', email: 'srinivasmurthy@gmail.com' },
-  { firstName: 'Padmavathi', lastName: 'Devi', email: 'padmavathidevi@gmail.com' },
-  { firstName: 'Ramesh', lastName: 'Babu', email: 'rameshbabu@gmail.com' },
-  { firstName: 'Anuradha', lastName: 'Kumari', email: 'anuradhakumari@gmail.com' },
-  { firstName: 'Kiran', lastName: 'Kumar', email: 'kirankumar@gmail.com' },
-  { firstName: 'Swathi', lastName: 'Goud', email: 'swathigoud@gmail.com' },
-  { firstName: 'Rajesh', lastName: 'Chowdary', email: 'rajeshchowdary@gmail.com' },
-  { firstName: 'Divya', lastName: 'Sree', email: 'divyasree@gmail.com' },
-  { firstName: 'Naveen', lastName: 'Allu', email: 'naveenallu@gmail.com' },
-  { firstName: 'Harika', lastName: 'Naidu', email: 'harikanaidu@gmail.com' },
-  { firstName: 'Prasad', lastName: 'Rao', email: 'prasadrao@gmail.com' },
-  { firstName: 'Sindhu', lastName: 'Varma', email: 'sindhuvarma@gmail.com' },
-  { firstName: 'Mahesh', lastName: 'Goud', email: 'maheshgoud@gmail.com' },
-];
-
 export const ADMIN_USER = {
   name: 'Allu Naveen',
   role: 'System Administrator',

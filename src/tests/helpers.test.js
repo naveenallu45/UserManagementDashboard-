@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import {
   assignDepartment,
+  assignStatus,
   filterUsers,
   getFullName,
   getInitials,
+  normalizeUser,
   paginateUsers,
   sortUsers,
   splitName,
@@ -41,6 +43,39 @@ describe('assignDepartment', () => {
   it('assigns a department based on user id', () => {
     expect(assignDepartment(1)).toBe('HR')
     expect(assignDepartment(2)).toBe('Sales')
+  })
+})
+
+describe('normalizeUser', () => {
+  it('maps JSONPlaceholder API users to the app user shape', () => {
+    const apiUser = {
+      id: 1,
+      name: 'Leanne Graham',
+      email: 'Sincere@april.biz',
+      username: 'Bret',
+    }
+
+    expect(normalizeUser(apiUser)).toEqual({
+      id: 1,
+      firstName: 'Leanne',
+      lastName: 'Graham',
+      email: 'Sincere@april.biz',
+      department: assignDepartment(1),
+      status: assignStatus(1),
+    })
+  })
+
+  it('preserves locally created users with explicit fields', () => {
+    const localUser = {
+      id: 11,
+      firstName: 'Jane',
+      lastName: 'Doe',
+      email: 'jane@example.com',
+      department: 'Finance',
+      status: 'Active',
+    }
+
+    expect(normalizeUser(localUser)).toEqual(localUser)
   })
 })
 

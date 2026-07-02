@@ -1,4 +1,4 @@
-import { DEPARTMENTS, USER_PROFILES } from './constants'
+import { DEPARTMENTS } from './constants'
 
 export function splitName(fullName) {
   if (!fullName || typeof fullName !== 'string') {
@@ -31,30 +31,17 @@ export function assignStatus(userId) {
   return Number(userId) % 3 === 0 ? 'Inactive' : 'Active'
 }
 
-export function getTeluguProfile(userId) {
-  const index = (Math.abs(Number(userId) || 1) - 1) % USER_PROFILES.length
-  return USER_PROFILES[index]
-}
-
 export function normalizeUser(rawUser) {
-  if (rawUser.firstName && rawUser.lastName) {
-    return {
-      id: rawUser.id,
-      firstName: rawUser.firstName,
-      lastName: rawUser.lastName,
-      email: rawUser.email ?? '',
-      department: rawUser.department ?? assignDepartment(rawUser.id),
-      status: rawUser.status ?? assignStatus(rawUser.id),
-    }
-  }
-
-  const telugu = getTeluguProfile(rawUser.id)
+  const hasSplitNames = rawUser.firstName && rawUser.lastName
+  const { firstName, lastName } = hasSplitNames
+    ? { firstName: rawUser.firstName, lastName: rawUser.lastName }
+    : splitName(rawUser.name)
 
   return {
     id: rawUser.id,
-    firstName: telugu.firstName,
-    lastName: telugu.lastName,
-    email: telugu.email,
+    firstName,
+    lastName,
+    email: rawUser.email ?? '',
     department: rawUser.department ?? assignDepartment(rawUser.id),
     status: rawUser.status ?? assignStatus(rawUser.id),
   }
